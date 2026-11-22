@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* Hace que el padding y el borde no sumen tamaño extra a las cajas */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* Degradado morado oscuro fijo */
+  background: linear-gradient(180deg, #2b1055 0%, #15082a 45%, #080311 100%);
+  background-attachment: fixed;
+  color: white;
+  /* espacio entre líneas de texto para que se lea mejor */
+  line-height: 1.6;
+}
+
+/* Cabecera con Flex para separar logo y menú a los lados */
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #080311;
+  border-bottom: 2px solid #ffc600;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.nombre-empresa {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffc600;
+  text-transform: uppercase;
+}
+
+.menu-navegacion ul {
+  display: flex;
+  /* Quita los puntos negros de las listas */
+  list-style: none;
+  gap: 20px;
+}
+
+.menu-navegacion li {
+  font-weight: bold;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.menu-navegacion li:hover {
+  background-color: #ffc600;
+  color: #080311;
+}
+
+/* Pantalla 1: Hero */
+.pantalla-hero {
+  /* 90vh ocupa casi todo el alto de la ventana del navegador */
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  background-image: url("../imagenes_video/estrellas.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-caja {
+  max-width: 750px;
+  /* Fondo semitransparente para leer bien el texto encima del GIF */
+  background-color: rgba(15, 7, 30, 0.8);
+  padding: 40px 30px;
+  border-radius: 15px;
+  border: 1px solid #ffc600;
+}
+
+.hero-caja h1 {
+  font-size: 40px;
+  color: #ffc600;
+  margin-bottom: 15px;
+}
+
+.hero-caja p {
+  font-size: 18px;
+  color: #e0dce8;
+  margin-bottom: 25px;
+}
+
+.etiquetas-destacadas {
+  display: flex;
+  justify-content: center;
+  /* Hace que las etiquetas bajen de línea si no entran en móvil */
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.etiquetas-destacadas span {
+  background-color: #2b1055;
+  border: 1px solid #ffc600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Pantalla 2: Actividades con CSS Grid */
+.pantalla-actividades {
+  padding: 80px 40px;
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.titulo-seccion h2 {
+  font-size: 32px;
+  color: #ffc600;
+  margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+  color: #e0dce8;
+  font-size: 16px;
+}
+
+.grid-rutas {
+  display: grid;
+  /* 3 columnas iguales */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  /* Centra el bloque horizontalmente */
+  margin: 0 auto;
+}
+
+.tarjeta {
+  background-color: #1c1132;
+  border: 1px solid #591a73;
+  border-radius: 12px;
+  /* Recorta las esquinas superiores de la foto para que sigan el borde redondeado */
+  overflow: hidden;
+}
+
+.tarjeta:hover {
+  border-color: #ffc600;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 210px;
+  /* Recorta la imagen sin deformarla para que todas midan igual */
+  object-fit: cover;
+  display: block;
+}
+
+.tarjeta-cuerpo {
+  padding: 20px;
+}
+
+.insignia {
+  display: inline-block;
+  background-color: #ffc600;
+  color: #080311;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.tarjeta-cuerpo h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.tarjeta-cuerpo p {
+  color: #e0dce8;
+  font-size: 15px;
+}
+
+/* Pantalla 3: Nosotros y Vídeo con Flex */
+.pantalla-nosotros {
+  min-height: 90vh;
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-flex-doble {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.columna-texto,
+.columna-multimedia {
+  /* Reparte el espacio al 50% entre las dos columnas */
+  flex: 1;
+  background-color: #1c1132;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid #591a73;
+}
+
+.columna-texto h2,
+.columna-multimedia h3 {
+  color: #ffc600;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+.testimonio {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #080311;
+  border-left: 4px solid #ffc600;
+}
+
+.testimonio p {
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.testimonio span {
+  font-size: 14px;
+  color: #ffc600;
+  font-weight: bold;
+}
+
+.marco-video iframe {
+  width: 100%;
+  height: 280px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Pie de página */
+.pie-pagina {
+  background-color: #040108;
+  border-top: 2px solid #2b1055;
+  text-align: center;
+  padding: 25px 15px;
+  color: #e0dce8;
+}
+
+.pie-contenido p {
+  margin-bottom: 6px;
+}
+
+/* Media Queries para Tablet y Móvil */
+@media (max-width: 992px) {
+  /* En tablet bajamos el Grid de 3 a 2 columnas */
+  .grid-rutas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Apilamos el texto encima del vídeo */
+  .contenedor-flex-doble {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .cabecera {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .menu-navegacion ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-caja h1 {
+    font-size: 28px;
+  }
+
+  /* En móvil dejamos el Grid en 1 sola columna */
+  .grid-rutas {
+    grid-template-columns: 1fr;
+  }
+}
